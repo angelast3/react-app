@@ -41,13 +41,11 @@ class App extends Component {
                             <Books books={this.state.books}
                                    onDelete={this.deleteBook}
                                    onEdit={this.getBook}
-                                   onAddCopy={this.onAddCopy}
                                    onTakeCopy={this.onTakeCopy}/>}/>
                         <Route path={"/"} element={
                             <Books books={this.state.books}
                                    onDelete={this.deleteBook}
                                    onEdit={this.getBook}
-                                   onAddCopy={this.onAddCopy}
                                    onTakeCopy={this.onTakeCopy}/>}/>
                     </Routes>
                 </main>
@@ -93,14 +91,6 @@ class App extends Component {
         LibraryService.deleteBook(id)
             .then(() => {
                 this.loadBooks();
-            });
-    }
-
-    onAddCopy = (id) => {
-        LibraryService.onAddCopy(id)
-            .then(() => {
-                this.loadBooks();
-
             });
     }
 
