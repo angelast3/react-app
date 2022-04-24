@@ -43,6 +43,12 @@ class App extends Component {
                                    onEdit={this.getBook}
                                    onAddCopy={this.onAddCopy}
                                    onTakeCopy={this.onTakeCopy}/>}/>
+                        <Route path={"/"} element={
+                            <Books books={this.state.books}
+                                   onDelete={this.deleteBook}
+                                   onEdit={this.getBook}
+                                   onAddCopy={this.onAddCopy}
+                                   onTakeCopy={this.onTakeCopy}/>}/>
                     </Routes>
                 </main>
 
@@ -91,7 +97,6 @@ class App extends Component {
     }
 
     onAddCopy = (id) => {
-        console.log("do addcopy u app.js")
         LibraryService.onAddCopy(id)
             .then(() => {
                 this.loadBooks();
