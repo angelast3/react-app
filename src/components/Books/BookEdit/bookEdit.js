@@ -27,7 +27,7 @@ const BookEdit = (props) => {
         const availableCopies = formData.availableCopies !== 0 ? formData.availableCopies : props.book.availableCopies;
         console.log(name + ", " + category + ", " + author + ", " + availableCopies)
         props.onEditBook(props.book.id, name, category, author, availableCopies);
-        navigate('books');
+        navigate('/books');
     }
 
     return(

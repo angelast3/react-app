@@ -27,11 +27,11 @@ const BookAdd = (props) => {
         console.log(name + ", " + category + ", " + author + ", " + availableCopies)
 
         props.onAddBook(name, category, author, availableCopies);
-        navigate('books');
+        navigate('/books');
     }
 
     return (
-        <div className="containter">
+        <div className="container">
             <div className="row mt-5">
                 <div className="col-md-5">
                     <form onSubmit={onFormSubmit}>
