@@ -2,7 +2,6 @@ import React from 'react';
 import ReactPaginate from 'react-paginate'
 import BookTerm from '../BookTerm/bookTerm';
 import {Link} from 'react-router-dom';
-import LibraryService from "../../../repository/libraryRepository";
 
 class Books extends React.Component {
 
@@ -75,8 +74,7 @@ class Books extends React.Component {
         console.log(offset, nextPageOffset)
         return this.props.books.map((term, index) => {
             return (
-                <BookTerm term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit} onAddCopy={this.props.onAddCopy}
-                          onTakeCopy={this.props.onTakeCopy}/>
+                <BookTerm term={term} onDelete={this.props.onDelete} onEdit={this.props.onEdit} onTakeCopy={this.props.onTakeCopy}/>
             );
         }).filter((book, index) => {
             return index >= offset && index < nextPageOffset;
@@ -85,35 +83,3 @@ class Books extends React.Component {
 }
 
 export default Books;
-
-
-// <div className={"container mm-4 mt-5"}>
-//     <div className={"row"}>
-//         <div className={"table-responsive"}>
-//             <table className={"table table-striped"}>
-//                 <thead>
-//                 <tr>
-//                     <th scope={"col"}>Name</th>
-//                     <th scope={"col"}>Category</th>
-//                     <th scope={"col"}>Author</th>
-//                     <th scope={"col"}>Available Copies</th>
-//                 </tr>
-//                 </thead>
-//                 <tbody>
-//                 {props.books.map((term) => {
-//                     return (
-//                         <BookTerm term={term} onDelete={props.onDelete} onEdit={props.onEdit} onAddCopy={props.onAddCopy}  onTakeCopy={props.onTakeCopy}/>
-//                     );
-//                 })}
-//                 </tbody>
-//             </table>
-//         </div>
-//         <div className="col mb-3">
-//             <div className="row">
-//                 <div className="col-sm-12 col-md-12">
-//                     <Link className={"btn btn-block btn-dark"} to={"/books/add"}>Add new book</Link>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </div>

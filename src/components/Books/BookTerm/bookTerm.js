@@ -19,13 +19,9 @@ const bookTerm = (props) => {
                       to={`/books/edit/${props.term.id}`}>
                     Edit
                 </Link>
-                <a title={"+"} className={"btn btn-outline-secondary"}
-                   onClick={() => props.onAddCopy(props.term.id)}>
-                    +
-                </a>
-                <a title={"-"} className={"btn btn-outline-secondary"}
+                <a title={"taken"} className={"btn btn-outline-secondary"}
                    onClick={() => props.onTakeCopy(props.term.id)}>
-                    -
+                    Mark as taken
                 </a>
             </th>
         </tr>

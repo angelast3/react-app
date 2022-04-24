@@ -33,13 +33,10 @@ const LibraryService = {
     getBook: (id) => {
         return axios.get(`/books/${id}`);
     },
-    onAddCopy: (id) => {
-        console.log(id);
-        return axios.put(`/books/increase-book/${id}`);
-    },
+
     onTakeCopy: (id) => {
         console.log(id);
-        return axios.put(`/books/decrease-book/${id}`);
+        return axios.put(`/books/take-copy/${id}`);
     }
 }
 
