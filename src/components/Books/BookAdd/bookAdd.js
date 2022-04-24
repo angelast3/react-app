@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 
 const BookAdd = (props) => {
 
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [formData, updateFormData] = React.useState({
         name: "",
         category: 0,
@@ -27,7 +27,7 @@ const BookAdd = (props) => {
         console.log(name + ", " + category + ", " + author + ", " + availableCopies)
 
         props.onAddBook(name, category, author, availableCopies);
-        history.push("/books");
+        navigate('books');
     }
 
     return (
